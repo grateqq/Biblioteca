@@ -18,12 +18,12 @@ addBookToLibrary("The Lord of the Rings", "Tolkien",1000, 1954, true)
 addBookToLibrary("The Islan", "John Smit", 102, 1992, false)
 addBookToLibrary("Silo", "Hugh Howey", 250, 2013, false)
 
+//agregar al boton evento
+
+
 console.log(myLibrary)
 
 function showMyLibrary (){
-
-
-
   document.getElementById("container").innerHTML = "";
   
   myLibrary.forEach((value,index)=>{
