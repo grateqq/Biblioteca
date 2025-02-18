@@ -21,7 +21,13 @@ addBookToLibrary("Silo", "Hugh Howey", 250, 2013, false)
 console.log(myLibrary)
 
 function showMyLibrary (){
+
+
+
+  document.getElementById("container").innerHTML = "";
+  
   myLibrary.forEach((value,index)=>{
+
     // const contenedor = document.getElementById("container")
 
     // contenedor.innerHTML = '<div class"libro"><p class="name"></p><p class="autor"></p><p class="pages"></p><p class="year"></p><p class="read"></p><div>' 
@@ -30,15 +36,15 @@ function showMyLibrary (){
     // const pages = document.querySelector(".pages")
     // const year = document.querySelector(".year")
     // const read = document.querySelector(".read")
-  
+    let library = document.getElementById("container")
+     console.log(library)
     // name.innerHTML = myLibrary[value].name
     // autor.innerHTML = myLibrary[value].autor
     // pages.innerHTML = myLibrary[value].pages
     console.log("value: ")
     console.log(value) // pasa por cada elemento objeto dela array
     //harrypotener
-    let library = document.getElementById("container")
-    console.log(library)
+
 
     let newDiv = document.createElement("div")
     newDiv.classList.add("libro");
@@ -83,4 +89,9 @@ function showMyLibrary (){
 
 })
 }
+showMyLibrary ()
+
+
+addBookToLibrary("Yo Robot", "Issac Asimov", 400, 1950, true)
+// se duplican
 showMyLibrary ()
