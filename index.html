@@ -14,8 +14,25 @@
 <div id="container">
 
 </div>
+<button id="biblioreload">Reload</button>
+<button id="add-book-btn">Agregar Libro</button>
 
-<button>New book</button>
+<dialog id="book-dialog">
+  <form id="book-form">
+    <h2>Agregar un nuevo libro</h2>
+    <input type="text" id="title" placeholver="title" value="El Principito" required>
+    <input type="text" id="autor" placeholver="autor" value="Hakicho" required>
+    <input type="number" id="pages" placeholver="pages" value="1000" required>
+    <input type="number" id="year" placeholver="year" value="1950" required>
+    <label for="">
+    <input type="checkbox" id="read" placeholver="read" value="1000" checked> Leido?
+    </label>
+    <div>
+      <button type="submit">Subir</button>
+      <button type="button" id="cancel-btn">Cancelar</button>
+    </div>
+  </form>
+</dialog>
 
 
 
