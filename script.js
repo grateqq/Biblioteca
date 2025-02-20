@@ -41,8 +41,28 @@ function showMyLibrary () {
     console.log(containerlibrery)
   })
 }
-showMyLibrary ()
 
-console.log(myLibrary[0])
+//el boton me abra el formulario.
+
+let addbookbtn = document.getElementById("add-book-btn")
+let bookdialog = document.getElementById("book-dialog")
+addbookbtn.addEventListener("click", function () {
+  bookdialog.showModal()
+})
+
+
+//los botenes que cierran el formulario
+let cancelBtn = document.getElementById("cancel-btn")
+cancelBtn.addEventListener("click", function () {
+  bookdialog.close();
+})
+
+//botton subit.
+/* una vez abierto, completar el formulario, y precionar cancelar para volver a ventana anterior
+subim ingresar el libro. Que sucede cuadno se preciona el boton subir.
+ necesito recolectar la info del formulario.
+ usar la funcion crear un objeto y añadirlo a matriz*/
+
+console.log(addbookbtn)
 
 //FIN
