@@ -15,14 +15,15 @@ function addBookToLibrary (title, author, pages, year, read)  {
 }
 
 //ejemplos
+/*
 addBookToLibrary("Harry Potter", "J. J. Rowling", 100, 1997, true)
 addBookToLibrary("The Lord of the Rings", "Tolkien",1000, 1954, true)
 addBookToLibrary("The Islan", "John Smit", 102, 1992, false)
 addBookToLibrary("Silo", "Hugh Howey", 250, 2013, false)
-
+*/
 // funcion mostar biblioteca
 
-console.log(myLibrary)// libro harry, the lord... , the islan y silo.
+//console.log(myLibrary)// libro harry, the lord... , the islan y silo.
 function showMyLibrary () {
   myLibrary.forEach((value)=>{
     let containerlibrery = document.getElementById("container");
@@ -57,12 +58,42 @@ cancelBtn.addEventListener("click", function () {
   bookdialog.close();
 })
 
-//botton subit.
+//botton submit.
+document.getElementById("book-form").addEventListener("submit", (event) => {
+  event.preventDefault(); ;// Evita que la página se recargue
+
+const title = document.getElementById("title").value;
+const author = document.getElementById("author").value;
+const pages = document.getElementById("pages").value;
+const year = document.getElementById("year").value;
+const read = document.getElementById("read").checked;
+
+console.log(title)
+console.log(author)
+console.log(pages)
+console.log(year)
+console.log(read)
+
+addBookToLibrary(title, author, pages, year, read)
+console.log(myLibrary)
+
+
+document.querySelectorAll(".libro").forEach((libro) => libro.remove());
+showMyLibrary ()
+
+
+
+
+
 /* una vez abierto, completar el formulario, y precionar cancelar para volver a ventana anterior
 subim ingresar el libro. Que sucede cuadno se preciona el boton subir.
  necesito recolectar la info del formulario.
  usar la funcion crear un objeto y añadirlo a matriz*/
 
-console.log(addbookbtn)
+
+bookdialog.close();
+
+//fin boton
+})
 
 //FIN
