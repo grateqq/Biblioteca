@@ -15,31 +15,44 @@ function addBookToLibrary (title, author, pages, year, read)  {
 }
 
 //ejemplos
-/*
+
 addBookToLibrary("Harry Potter", "J. J. Rowling", 100, 1997, true)
 addBookToLibrary("The Lord of the Rings", "Tolkien",1000, 1954, true)
 addBookToLibrary("The Islan", "John Smit", 102, 1992, false)
 addBookToLibrary("Silo", "Hugh Howey", 250, 2013, false)
-*/
+document.querySelectorAll(".libro").forEach((libro) => libro.remove());
+showMyLibrary()
+
 // funcion mostar biblioteca
 
 //console.log(myLibrary)// libro harry, the lord... , the islan y silo.
 function showMyLibrary () {
-  myLibrary.forEach((value)=>{
+  myLibrary.forEach((value,index)=>{
     let containerlibrery = document.getElementById("container");
     let containerbook = document.createElement("div")
     containerbook.classList.add("libro")
 
     containerlibrery.appendChild(containerbook)
-   
+    // console.log(myLibrary.value)
+    // console.log(index)
     containerbook.innerHTML = `
       <h2>${value.title}</h2>
       <p>Author: ${value.author}</p>
       <p>Pages: ${value.pages}</p>
       <p>Year: ${value.year}</p>
       <p>Read?: ${value.status()}</p>
-    `;
-    console.log(containerlibrery)
+      ` 
+      // console.log(index)
+  let deleteBtn = document.createElement("button")
+  deleteBtn.innerText = "delete"
+  deleteBtn.addEventListener("click", function(index) {
+    myLibrary.splice(index,1)
+    document.querySelectorAll(".libro").forEach((libro) => libro.remove());
+    showMyLibrary()
+  })
+  console.log(deleteBtn)
+  containerbook.appendChild(deleteBtn)
+  
   })
 }
 
@@ -76,6 +89,7 @@ console.log(read)
 
 addBookToLibrary(title, author, pages, year, read)
 console.log(myLibrary)
+bookdialog.close()
 
 
 document.querySelectorAll(".libro").forEach((libro) => libro.remove());
