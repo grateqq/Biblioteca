@@ -15,6 +15,7 @@ body {
   background-color: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 3fr);
 }
 
 .libro {
@@ -24,12 +25,13 @@ body {
   justify-content: center;
   align-self: center;
   justify-self: center;
-  grid-template-columns:1fr;
+  grid-template-columns:2fr;
   grid-template-rows: 1fr 1fr 1fr;
   border-radius: 20px;
   align-items: center;
   justify-items: center;
   width: 80%;
+  height: 80%;
   gap:4px;
   margin: 4px;
   padding: 10px;
