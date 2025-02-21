@@ -16,12 +16,12 @@ function addBookToLibrary (title, author, pages, year, read)  {
 
 //ejemplos
 
-addBookToLibrary("Harry Potter", "J. J. Rowling", 100, 1997, true)
-addBookToLibrary("The Lord of the Rings", "Tolkien",1000, 1954, true)
-addBookToLibrary("The Islan", "John Smit", 102, 1992, false)
-addBookToLibrary("Silo", "Hugh Howey", 250, 2013, false)
-document.querySelectorAll(".libro").forEach((libro) => libro.remove());
-showMyLibrary()
+// addBookToLibrary("Harry Potter", "J. J. Rowling", 100, 1997, true)
+// addBookToLibrary("The Lord of the Rings", "Tolkien",1000, 1954, true)
+// addBookToLibrary("The Islan", "John Smit", 102, 1992, false)
+// addBookToLibrary("Silo", "Hugh Howey", 250, 2013, false)
+// document.querySelectorAll(".libro").forEach((libro) => libro.remove());
+// showMyLibrary()
 
 // funcion mostar biblioteca
 
@@ -50,8 +50,35 @@ function showMyLibrary () {
     document.querySelectorAll(".libro").forEach((libro) => libro.remove());
     showMyLibrary()
   })
-  console.log(deleteBtn)
+  // console.log(deleteBtn)
   containerbook.appendChild(deleteBtn)
+
+  let readLabel = document.createElement("label")
+  readLabel.innerText="Read?"
+  readLabel.setAttribute("for", `readInput${index}`); 
+  let readInput = document.createElement("input")
+  readInput.type = "checkbox";
+  readInput.id = `readInput${index}`
+  if (value.read) {
+    readInput.checked  = true;
+  } else {readInput.checked  = false;}
+  readInput.addEventListener("click", function (){
+    
+    if (value.read) {
+      value.read = false
+     
+    }else {
+      value.read = true;
+     
+    }
+
+  })
+  
+
+
+
+  readLabel.appendChild(readInput)
+  containerbook.appendChild(readLabel)
   
   })
 }
@@ -81,11 +108,11 @@ const pages = document.getElementById("pages").value;
 const year = document.getElementById("year").value;
 const read = document.getElementById("read").checked;
 
-console.log(title)
-console.log(author)
-console.log(pages)
-console.log(year)
-console.log(read)
+// console.log(title)
+// console.log(author)
+// console.log(pages)
+// console.log(year)
+// console.log(read)
 
 addBookToLibrary(title, author, pages, year, read)
 console.log(myLibrary)
